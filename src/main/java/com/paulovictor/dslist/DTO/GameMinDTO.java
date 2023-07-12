@@ -1,6 +1,7 @@
 package com.paulovictor.dslist.DTO;
 
 import com.paulovictor.dslist.entities.Game;
+import com.paulovictor.dslist.projections.GameMinProjection;
 
 public class GameMinDTO {
 
@@ -47,5 +48,13 @@ public class GameMinDTO {
 		return shortDescription;
 	}
 	
+
+	public GameMinDTO(GameMinProjection projection) {
+		this.id = projection.getId();
+		this.title = projection.getTitle();
+		this.year = projection.getYear();
+		this.imgUrl = projection.getImgUrl();
+		this.shortDescription = projection.getShortDescription();
 	
+	}
 }
